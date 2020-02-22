@@ -1,0 +1,16 @@
+<?php
+$con = mysqli_connect('localhost','root');
+if($con){
+    echo "connection successfull";
+}else{
+    echo "no connection";
+}
+mysqli_select_db($con,'myuserinfodata');
+$user = $post['user'];
+$email = $post['email'];
+$mobile = $post['mobile'];
+$comment = $post['comment'];
+$query = "insert into mydata (user,email,mobile,comment
+value ('user','email','mobile','comment')";
+mysqli_query($con,$query);
+echo "$query";
